@@ -48,7 +48,7 @@ namespace Sitecore.Support.Data.LanguageFallback
             fallbackItem = null;
           }
 
-          if (fallbackItem == null)
+          if (fallbackItem == null || fallbackItem.RuntimeSettings.TemporaryVersion)
           {
             break;
           }
