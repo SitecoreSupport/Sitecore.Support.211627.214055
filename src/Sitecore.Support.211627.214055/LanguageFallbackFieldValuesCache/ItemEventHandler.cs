@@ -56,7 +56,7 @@ namespace Sitecore.Support.LanguageFallbackFieldValuesCache
       foreach (var link in Globals.LinkDatabase.GetItemReferrers(item, false))
       {
         var referrer = Configuration.Factory.GetDatabase(link.SourceDatabaseName).GetItem(link.SourceItemID);
-        if (referrer.Source != null && referrer.Source.ID == item.ID)
+        if (referrer?.Source != null && referrer.Source.ID == item.ID)
         {
           clearCacheMethod.Invoke(fallbackFieldValuesCache, new object[] { referrer });
         }
